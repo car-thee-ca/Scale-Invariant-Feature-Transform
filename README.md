@@ -4,7 +4,7 @@ INTRODUCTION
 *	In order to automatically detect blobs of different sizes, a multiscale approach is necessary. 
 *	According to the scale-space theory the  multiple-scale LoG blob detector can locate blobs of different scales by detecting local extrema of the LoG scale-space representation after the scale-normalized LoG operation, where the scale of the detected blob is determined by selecting the one at which  the maximum ﬁlter response is assumed
 ![sift_1](sift_1.png)
-Algorithm and Program outline:
+### Algorithm and Program outline:
 *)	Generating a Laplacian of Gaussian filter
 +)	The Log filter is generated using the equation:
 ![sift_2](sift_2.png)
@@ -36,14 +36,14 @@ The image is filtered with the kernel obtained above. This is done using the mod
 *)	Maximum  value of each pixel is calculated considering all the layers(in the 3D scale space).
 *)	We obtain a matrices of 0s and max values using the maximum values created above for all the twelve 3D scale spaces.
 
-*.) Displaying circles to represent the blobs 
+### Displaying circles to represent the blobs 
 +)	 The non-maxima values are replaced by 0  and others by using a threshold=0.007 for all         the layers in the scale space.
 +)	 The radius is calculated for different values of sigma as r=1.414*sigma and stored.
 +)	The coordinates of maxima are found and stored.
 +)	The values of coordinates of the center of maxima on the image and the radius of the       circle is used to draw the circles using the function defined as show_all_circles(I,cx,cy,rad), where I=image( cx,cy)=coordinates of centre of the blobs, radius1=radius of the blob.
 +) The number of circles (blobs) is also displayed.
 
-#BLOB DETECTION RESULT-INPUT vs OUTPUT IMAGES:
+## BLOB DETECTION RESULT-INPUT vs OUTPUT IMAGES:
 ![sift_3](sift_3.png)
 ![sift_4](sift_4.png)
 ![sift_5](sift_5.png)
