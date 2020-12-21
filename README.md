@@ -39,4 +39,5 @@ The image is filtered with the kernel obtained above. This is done using the mod
 +)	 The non-maxima values are replaced by 0  and others by using a threshold=0.007 for all         the layers in the scale space.
 +)	 The radius is calculated for different values of sigma as r=1.414*sigma and stored.
 +)	The coordinates of maxima are found and stored.
-+)	The values of coordinates of the center of maxima on the image and the radius of the       circle is used to draw the circles using the function defined as show_all_circles(I,cx,cy,rad), where I=image( cx,cy)
++)	The values of coordinates of the center of maxima on the image and the radius of the       circle is used to draw the circles using the function defined as show_all_circles(I,cx,cy,rad), where I=image( cx,cy)=coordinates of centre of the blobs, radius1=radius of the blob.
+e) The number of circles (blobs) is also displayed.
